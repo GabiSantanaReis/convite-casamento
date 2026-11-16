@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matheus & Gabriela · 01/05/2027</title>
+<meta name="description" content="Vamos casar! Confirme sua presença no nosso almoço de casamento.">
+<meta property="og:title" content="Matheus & Gabriela vão casar!">
+<meta property="og:description" content="01 de maio de 2027, às 13h · Espaço Nattu. Toque para confirmar sua presença.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://gabisantanareis.github.io/convite-casamento/">
+<meta property="og:image" content="https://gabisantanareis.github.io/convite-casamento/assets/previa.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ilustração de Matheus e Gabriela">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/selo-gato.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Shantell+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body class="locked">
+
+<div id="envelope" class="env" role="button" tabindex="0" aria-label="Abrir convite">
+  <div class="env-wrap">
+    <svg class="back" viewBox="0 0 300 200"><path d="M6 10Q80 6 150 9T294 8Q298 100 296 192Q150 197 5 194Q8 100 6 10Z"/></svg>
+    <div class="letter"><b>Matheus &amp; Gabriela</b><span>vão casar!</span><i></i></div>
+    <svg class="front" viewBox="0 0 300 200"><path d="M6 10Q80 70 150 112Q220 66 294 8Q298 100 296 192Q150 197 5 194Q8 100 6 10Z"/><path class="ln" d="M7 192Q60 150 118 112M295 190Q240 150 182 112"/></svg>
+    <svg class="flap" viewBox="0 0 300 120"><path d="M6 8Q80 6 150 5T294 6Q220 64 150 112Q80 62 6 8Z"/></svg>
+    <svg class="seal" viewBox="0 0 50 46"><path d="M25 42C6 28 3 16 10 9C16 4 23 7 25 13C27 7 34 4 40 9C47 16 44 28 25 42Z"/></svg>
+  </div>
+  <p class="para" id="para"></p>
+  <p class="dica">toque para abrir</p>
+</div>
+
+<div id="site">
+<header class="hero">
+  <p class="kicker" data-anim>Vamos casar!</p>
+  <h1><span class="w">Matheus</span> <span class="amp">&amp;</span> <span class="w">Gabriela</span></h1>
+  <div class="casal-wrap" data-anim style="--d:.9s">
+    <img class="casal" src="assets/casal-abraco.png" alt="Ilustração de Matheus e Gabriela abraçados">
+  </div>
+  <p class="data" data-anim style="--d:1.3s">01 de maio de 2027</p>
+  <img class="div" src="assets/divisor-aliancas.png" alt="" data-anim style="--d:1.45s">
+  <a class="btn" data-anim style="--d:1.6s" href="#rsvp">Confirmar presença</a>
+</header>
+
+<section class="faixa">
+  <div class="tempo" data-anim>
+    <p class="fal">Faltam</p>
+    <div class="rel" role="timer" aria-label="Contagem regressiva para o casamento">
+      <div><b id="cd">–</b><small>dias</small></div><span>:</span>
+      <div><b id="ch">–</b><small>horas</small></div><span>:</span>
+      <div><b id="cm">–</b><small>min</small></div><span>:</span>
+      <div><b id="cs">–</b><small>seg</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="dia">
+  <div class="intro" data-anim>
+    <img class="ico" src="assets/tacas-vinho.png" alt="">
+    <h2>Nosso grande dia</h2>
+    <p>Preparamos tudo com muito carinho para celebrar o nosso amor ao lado de pessoas especiais. Esperamos vocês para testemunhar nosso sim e brindar conosco esse novo capítulo das nossas vidas!</p>
+  </div>
+  <svg class="seta" data-anim viewBox="0 0 140 84" aria-hidden="true">
+    <path class="ln" pathLength="100" d="M6 8C84 0 134 20 114 74"/>
+    <path class="ln hd" pathLength="100" d="M98 58L114 78L130 60"/>
+  </svg>
+  <div class="box" data-anim style="--d:.15s">
+    <div>
+      <h3>Localização</h3>
+      <p class="lugar"><strong class="titulo">Espaço Nattu - <span id="quando"></span></strong><span id="endereco"></span></p>
+      <div class="botoes">
+        <a class="btn" id="maps" target="_blank" rel="noopener">Google Maps</a>
+        <a class="btn sec" id="waze" target="_blank" rel="noopener">Waze</a>
+      </div>
+      <p class="salvar">Salvar a data</p>
+      <div class="botoes cal">
+        <a class="btn sec peq" id="gcal" target="_blank" rel="noopener">Google Agenda</a>
+        <a class="btn sec peq" id="ics" href="#" download="casamento-matheus-e-gabriela.ics">Apple / Outlook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rsvp" id="rsvp">
+  <div class="card" data-anim>
+    <img src="assets/calendario.png" alt="" class="ico">
+    <h2>Confirme sua presença</h2>
+    <p class="c">Responda até <strong id="prazo"></strong>.</p>
+    <form id="form">
+      <label>Seu nome<input name="nome" required autocomplete="name"></label>
+      <label>Quantas pessoas vão com você (contando você)?<input name="qtd" type="number" min="1" max="10" value="1" required></label>
+      <button class="btn" type="submit">Enviar confirmação</button>
+      <button class="btn sec" type="button" id="nao">Não vou conseguir ir</button>
+    </form>
+    <p class="resp" id="resp" role="status" hidden></p>
+  </div>
+</section>
+
+<footer>
+  <img data-anim src="assets/selo-gato.png" alt="Os gatinhos do casal">
+  <p data-anim style="--d:.2s">Estamos muito felizes e esperamos você lá.</p>
+  <p class="peq">Matheus & Gabriela</p>
+</footer>
+</div>
+<script src="script.js"></script>
+</body></html>
