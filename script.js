@@ -7,7 +7,7 @@ const CONFIG = {
   mapsLink: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Espaço Nattu, R. das Palmeiras, 643 - Jardim, Santo André - SP, 09080-160"),
   wazeLink: "https://waze.com/ul?q=" + encodeURIComponent("Espaço Nattu, R. das Palmeiras, 643 - Jardim, Santo André - SP, 09080-160"),
   prazoRSVP: "01/04/2027",
-  sheetsUrl: ""                 // URL do Apps Script (termina em /exec). Cole aqui para ativar o RSVP
+  sheetsUrl: "https://script.google.com/macros/s/AKfycbzDOlFiGzx-38YlM4yBwfMkHL-djozDo9hfXVfHs1zDmkfAn5aSx08Uv9SPVBo1l44bpg/exec"
 };
 // ============================
 
