@@ -7,8 +7,7 @@ const CONFIG = {
   mapsLink: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Espaço Nattu, R. das Palmeiras, 643 - Jardim, Santo André - SP, 09080-160"),
   wazeLink: "https://waze.com/ul?q=" + encodeURIComponent("Espaço Nattu, R. das Palmeiras, 643 - Jardim, Santo André - SP, 09080-160"),
   prazoRSVP: "01/04/2027",
-  sheetsUrl: "",                // URL do Apps Script (termina em /exec). Vazio = usa o WhatsApp
-  whatsapp: "5511999999999"     // usado só se sheetsUrl estiver vazio: DDI+DDD, só dígitos
+  sheetsUrl: ""                 // URL do Apps Script (termina em /exec). Cole aqui para ativar o RSVP
 };
 // ============================
 
@@ -48,18 +47,16 @@ function tick(){
 }
 tick(); setInterval(tick, 1000);
 
-function enviarWhatsApp(texto){
-  window.open("https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(texto), "_blank");
-}
 async function responder(status){
   const form = $("form");
   if (!form.reportValidity()) return;
   const nome = form.elements.nome.value.trim();
   const qtd = form.elements.qtd.value;
   if (!CONFIG.sheetsUrl){
-    enviarWhatsApp(status === "sim"
-      ? `Olá! Confirmo presença no casamento de Matheus & Gabriela.\nNome: ${nome}\nPessoas: ${qtd}`
-      : `Olá! Infelizmente não vou conseguir ir ao casamento.\nNome: ${nome}`);
+    const r = $("resp");
+    r.className = "resp erro";
+    r.textContent = "As confirmações ainda não estão abertas. Tente de novo em breve.";
+    r.hidden = false;
     return;
   }
   const botoes = form.querySelectorAll("button");
